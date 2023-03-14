@@ -8,6 +8,7 @@ root = Tk()
 root.geometry("600x450")
 
 #--------------------MENU--------------------
+
 #background="cyan3"
 #background="gray55"
 
@@ -37,6 +38,7 @@ style.theme_create("MyStyle", parent="alt", settings={
 style.theme_use("MyStyle")
 
 #--------------------FRAMES--------------------
+
 BaseFrame = ttk.Frame(tabAD, padding="5 5 5 5")
 BaseFrame.grid(column=0, row= 0)
 
@@ -97,25 +99,27 @@ ttk.Label(Frame5, text="Total Staying Time (days): ").grid(column=3, row=0,stick
 #Segundo Frame
 FirstNameEntry = ttk.Entry(Frame2, textvariable=FName, width=28).grid(column=1, row=0, sticky=(W),padx=5)
 LastNameEntry = ttk.Entry(Frame2, textvariable=LName, width=28).grid(column=3, row=0, sticky=(W),padx=5)
-CountryEntry = ttk.Entry(Frame2,textvariable=Country, width=28).grid(column=3, row=1, sticky=(W),padx=5)
+CountryEntry = ttk.Entry(Frame2,textvariable=Country, width=18).grid(column=3, row=1, sticky=(W))
 
 #Cuarto Frame
 CreditEntry = ttk.Entry(Frame4, textvariable=Credit, width=28).grid(column=1, row=0, sticky=(W),padx=5)
 
 #Quinto Frame
 CreditEntry = ttk.Entry(Frame5,textvariable= Days, width=10).grid(column=4, row=0)
+
 #--------------------COMBO BOX--------------------
+
 DiaBox = ttk.Combobox(Frame3, textvariable=Dia, width=3)
-DiaBox.grid(column=0, row=0, sticky=(W))
+DiaBox.grid(column=0, row=0, sticky=(W), pady=10)
 DiaBox['values'] = tuple (range(1, 32))
 
 MesBox = ttk.Combobox(Frame3, textvariable=Mes, width=8)
-MesBox.grid(column=1, row=0, sticky=(W), padx=2)
+MesBox.grid(column=1, row=0, sticky=(W), padx=2, pady=10)
 MesBox['values'] = ("January","February","March","April","May","June","July","August","September",
                     "Octuber","November","December")
 
 AñoBox = ttk.Combobox(Frame3, textvariable=Año, width=8)
-AñoBox.grid(column=2, row= 0,sticky=(W), padx=2)
+AñoBox.grid(column=2, row= 0,sticky=(W), padx=2, pady=10)
 AñoBox['values'] = tuple (range(1923,2024))
 
 #--------------------RADIO BOTTON--------------------
